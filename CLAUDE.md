@@ -12,7 +12,9 @@ This project turns each week's course materials into study material. It supports
 school-notes/
 ├── CLAUDE.md                     ← this file (shared rules)
 ├── README.md                     ← student's quick-start
+├── setup.ps1                     ← one-command setup: creates .venv, installs requirements, runs examples
 ├── requirements.txt              ← Python packages for tools/
+├── .venv/                        ← local virtual environment (created by setup.ps1, gitignored)
 ├── .claude/commands/
 │   ├── prep.md                   ← /prep <course> <week>
 │   ├── notes.md                  ← /notes <course> <week> [part]
@@ -61,7 +63,8 @@ If a course's `COURSE.md` says a stage doesn't exist, the command says so and st
 - **Don't invent content.** Anything unclear that the sources don't resolve gets written as "unclear in source" and listed under Gaps.
 - Never guess page numbers, problem numbers, values or symbols. If a handwritten or spoken value is ambiguous, mark it **⚠ uncertain** and give the most likely reading(s).
 - If sources conflict, state the conflict explicitly. Don't quietly pick one.
-- Any numerical answer that can be checked by running code should be checked by running code (see the course profile for how, and `tools/README.md`). Final outputs must say what was machine-verified and what wasn't. If a needed Python package is missing, tell the student to run `pip install -r requirements.txt`. Don't skip the check.
+- Any numerical answer that can be checked by running code should be checked by running code (see the course profile for how, and `tools/README.md`). Final outputs must say what was machine-verified and what wasn't. Don't skip the check.
+- Always run Python as `.venv/Scripts/python`. If `.venv` is missing, tell the student to run `.\setup.ps1` and stop.
 
 ### Citations
 Cite sources inline and compactly. Use only the tags a course has:

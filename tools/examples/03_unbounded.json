@@ -1,0 +1,12 @@
+{
+  "name": "max x1+x2 (unbounded)",
+  "sense": "max",
+  "vars": ["x1", "x2"],
+  "c": [1, 1],
+  "constraints": [
+    {"coef": [1, -1], "op": "<=", "rhs": 1, "label": "c1"}
+  ],
+  "claimed": {
+    "status": "unbounded"
+  }
+}

@@ -35,7 +35,7 @@ weeks/weekNN/
    - Mark every symbol, subscript, sign or number you can't read with certainty as **⚠**, followed by your best reading and any alternatives, e.g. `x_2 ⚠(x_3?)`.
    - End each question with a line **TA's final answer:** stating the answer as written.
    - Note anything the TA underlined, boxed or wrote as a tip ("common mistake", "always check…"). These become ⭐ items.
-4. **Verify the TA's answers.** For every tutorial question with a numerical LP answer (optimal value, optimal solution, shadow prices), encode the problem as JSON and run `python tools/verify_lp.py <file>` (see `tools/README.md`). Save the specs to `work/verify/tutorial-QN.json`. Record the result for each question: ✅ matches, ❌ doesn't match (give both values), or — not machine-checkable (proofs, conceptual questions, formulation-only).
+4. **Verify the TA's answers.** For every tutorial question with a numerical LP answer (optimal value, optimal solution, shadow prices), encode the problem as JSON and run `.venv/Scripts/python tools/verify_lp.py <file>` (see `tools/README.md`). Save the specs to `work/verify/tutorial-QN.json`. Record the result for each question: ✅ matches, ❌ doesn't match (give both values), or — not machine-checkable (proofs, conceptual questions, formulation-only).
    - A ❌ usually means a transcription misread, not a TA error. Check the ⚠ marks for that question first and say which reading would make it match.
 5. **Write `work/manifest.md`:**
    - **Lecture topics**, per lecture: a bullet list with slide ranges, e.g. "Simplex method: pivoting [L1 S8–S15]".

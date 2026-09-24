@@ -1,0 +1,17 @@
+{
+  "name": "max 3x1+5x2 (classic <= example)",
+  "sense": "max",
+  "vars": ["x1", "x2"],
+  "c": [3, 5],
+  "constraints": [
+    {"coef": [1, 0], "op": "<=", "rhs": 4, "label": "c1"},
+    {"coef": [0, 2], "op": "<=", "rhs": 12, "label": "c2"},
+    {"coef": [3, 2], "op": "<=", "rhs": 18, "label": "c3"}
+  ],
+  "claimed": {
+    "status": "optimal",
+    "z": 36,
+    "x": [2, 6],
+    "duals": [0, 1.5, 1]
+  }
+}

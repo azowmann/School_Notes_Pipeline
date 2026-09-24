@@ -1,0 +1,16 @@
+{
+  "name": "max 5x1+4x2 (integer program)",
+  "sense": "max",
+  "vars": ["x1", "x2"],
+  "c": [5, 4],
+  "constraints": [
+    {"coef": [6, 4], "op": "<=", "rhs": 24, "label": "c1"},
+    {"coef": [1, 2], "op": "<=", "rhs": 6, "label": "c2"}
+  ],
+  "integer": true,
+  "claimed": {
+    "status": "optimal",
+    "z": 20,
+    "x": [4, 0]
+  }
+}
