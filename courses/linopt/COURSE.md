@@ -61,8 +61,6 @@ Output `notes/weekNN-notes.md` using `templates/notes-template.md`. Read the sli
 - **Gaps & conflicts** at the end, including anything the slides skip that a solution needed, notation that differs between slides and TA, and unresolved ⚠ items.
 - **Notation:** follow the lecture slides' notation (e.g. whether the standard form is max or min, what the basic and non-basic variables are called, tableau layout). If the TA uses different notation, convert to the slides' notation and note it once.
 
-Optional: the student can run `bash tools/render_pdf.sh <file.md>` to get a PDF with properly typeset math. Mention this in the end-of-stage summary.
-
 ## Stage: practice
 Output `notes/weekNN-practice.md` using `templates/practice-template.md`. Base it on this week's notes (and earlier weeks' notes only for prerequisites). **Only use techniques covered up to this week.** Don't set a duality question before duality has been taught.
 

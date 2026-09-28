@@ -3,3 +3,15 @@ __pycache__/
 *.pyc
 .pytest_cache/
 *.egg-info/
+
+# Keep instructor source notes and transcripts local, wherever they are stored.
+**/*transcript*
+**/ta-notes*
+**/professor-notes*
+**/professor_notes*
+**/prof-notes*
+**/prof_notes*
+**/instructor-notes*
+**/instructor_notes*
+**/personal-notes*
+**/personal_notes*

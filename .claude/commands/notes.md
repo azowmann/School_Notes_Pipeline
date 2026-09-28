@@ -53,8 +53,8 @@ Process one part at a time — read that part's sources, write its section, then
 
 Write to `weeks/<week>/notes/weekNN-notes.md` (creating `notes/` if needed), using the week folder's own name for `weekNN`. Never write to `input/` or `textbook/`.
 
+Then render it to PDF, per `CLAUDE.md`'s **Output format** rule: run `bash tools/render_pdf.sh weeks/<week>/notes/weekNN-notes.md` from the repo root, re-rendering the whole file even if only one part was updated. Keep both the `.md` and the `.pdf`. If the render fails, don't block on it — note the failure and the fix in the summary.
+
 ## 5. Finish
 
-End with a 3–6 line summary: what was produced, counts (topics, flags, unresolved gaps), anything the student must check, and the exact next command to run.
-
-If the profile mentions an optional PDF render, mention it here.
+End with a 3–6 line summary: what was produced, counts (topics, flags, unresolved gaps), whether the PDF rendered successfully, anything the student must check, and the exact next command to run.

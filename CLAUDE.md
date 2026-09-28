@@ -22,7 +22,7 @@ school-notes/
 ├── tools/
 │   ├── README.md                 ← how to use the tools (read before using them)
 │   ├── verify_lp.py              ← solves LPs / integer LPs and checks claimed answers
-│   ├── render_pdf.sh             ← optional: markdown → PDF with typeset math
+│   ├── render_pdf.sh             ← markdown → PDF with typeset math; run automatically by /notes and /practice
 │   └── examples/                 ← tested example inputs
 └── courses/
     ├── envs/                     ← Environment & Society
@@ -48,8 +48,8 @@ Every course uses the same three commands. What each stage does is defined in `C
 | Command | Purpose | Typical output |
 |---|---|---|
 | `/prep` | Read the raw inputs, extract structure, and produce anything the student must check or act on | `work/manifest.md` (+ course-specific work files) |
-| `/notes` | Write the main study notes | `notes/weekNN-notes.md` |
-| `/practice` | Write practice problems with worked solutions | `notes/weekNN-practice.md` |
+| `/notes` | Write the main study notes | `notes/weekNN-notes.md` + `notes/weekNN-notes.pdf` |
+| `/practice` | Write practice problems with worked solutions | `notes/weekNN-practice.md` + `notes/weekNN-practice.pdf` |
 
 Between `/prep` and `/notes` there is usually a **manual checkpoint** (defined per course). `/notes` must confirm the checkpoint was done before proceeding. If it wasn't, say what's missing and ask whether to continue.
 
@@ -85,6 +85,15 @@ Mark anything an instructor or TA signals as important ("this will be tested," "
 - Paraphrase sources. Quote only when exact wording matters (definitions, theorem statements).
 - Use LaTeX for math: `$...$` inline, `$$...$$` display. Use aligned environments or tables for multi-line work.
 - Every notes file ends with a **Gaps & conflicts** section.
+
+### Output format
+`/notes` and `/practice` are the two **final-output** stages. After writing or updating `notes/weekNN-notes.md` or `notes/weekNN-practice.md`, render it to PDF: run `bash tools/render_pdf.sh <that file>` from the repo root, and keep both the `.md` and the resulting `.pdf` side by side in `notes/` — the `.md` stays the editable source of truth (needed for partial re-runs like `/notes <course> <week> L2`), the `.pdf` is the polished copy for reading/printing.
+
+Re-render the whole file every time, even when only one part was updated — the PDF is a snapshot of the full current `.md`, not just the changed part.
+
+If `tools/render_pdf.sh` fails (e.g. pandoc or a LaTeX engine isn't installed), don't block the stage on it: the `.md` file is already written and is the deliverable of record. Say so plainly in the end-of-stage summary, along with the fix the script itself prints (install pandoc / xelatex).
+
+`work/manifest.md` (the `/prep` output) is **not** rendered to PDF — it's a working checklist the student reads and edits directly, not a polished deliverable.
 
 ### Multiple parts in a week
 Courses may have several lectures or other parts per week, labelled `L1`, `L2`, … Process them one at a time (read, then write that part) to keep context small. `/notes` and `/practice` accept an optional part argument (e.g. `L2`) to do just one part. `/practice` may also accept course-defined modes (e.g. `exam`), listed in that course's `COURSE.md`. When run for a single part, only that part's section of the output file is written or replaced, and the rest is left untouched.

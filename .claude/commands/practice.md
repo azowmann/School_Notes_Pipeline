@@ -47,6 +47,8 @@ Process one part at a time if the week has several, and only the named part if o
 
 Default output is `weeks/<week>/notes/weekNN-practice.md`, unless the profile or the chosen mode says otherwise. Never write to `input/` or `textbook/`.
 
+Then render it to PDF, per `CLAUDE.md`'s **Output format** rule: run `bash tools/render_pdf.sh <the output file>` from the repo root, re-rendering the whole file even if only one part was updated. Keep both the `.md` and the `.pdf`. If the render fails, don't block on it — note the failure and the fix in the summary.
+
 ## 5. Finish
 
-End with a 3–6 line summary: what was produced, the problem count and the mix, the verification result, anything the student must check, and the exact next command to run.
+End with a 3–6 line summary: what was produced, the problem count and the mix, the verification result, whether the PDF rendered successfully, anything the student must check, and the exact next command to run.

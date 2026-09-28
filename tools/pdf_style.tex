@@ -1,0 +1,24 @@
+% Visual styling for notes/practice PDFs rendered by render_pdf.sh.
+% Kept separate from render_pdf.sh so it's easy to read/tweak on its own.
+
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+\definecolor{ens-heading}{HTML}{28425C}
+
+% # in the markdown (the document's own title line)
+\titleformat{\section}
+  {\normalfont\LARGE\bfseries\color{ens-heading}}{\thesection}{0.8em}{}
+  [{\color{ens-heading!35}\titlerule}]
+\titlespacing*{\section}{0pt}{0.2em}{1em}
+
+% ## (major parts: quiz flags, Part 1/2, Gaps & conflicts)
+\titleformat{\subsection}
+  {\normalfont\Large\bfseries\color{ens-heading}}{\thesubsection}{0.8em}{}
+  [{\color{ens-heading!20}\titlerule}]
+\titlespacing*{\subsection}{0pt}{1.8em}{0.7em}
+
+% ### (individual topics within a part)
+\titleformat{\subsubsection}
+  {\normalfont\large\bfseries\color{ens-heading}}{\thesubsubsection}{0.8em}{}
+\titlespacing*{\subsubsection}{0pt}{1.3em}{0.4em}
