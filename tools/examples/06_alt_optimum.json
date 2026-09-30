@@ -1,0 +1,16 @@
+{
+  "name": "max x1+x2 (alternative optimum, must PASS)",
+  "sense": "max",
+  "vars": ["x1", "x2"],
+  "c": [1, 1],
+  "constraints": [
+    {"coef": [1, 1], "op": "<=", "rhs": 4, "label": "c1"},
+    {"coef": [1, 0], "op": "<=", "rhs": 3, "label": "c2"},
+    {"coef": [0, 1], "op": "<=", "rhs": 3, "label": "c3"}
+  ],
+  "claimed": {
+    "status": "optimal",
+    "z": 4,
+    "x": [3, 1]
+  }
+}
