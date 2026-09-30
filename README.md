@@ -49,29 +49,6 @@ didn't resolve.
 
 See each course's `courses/<course>/COURSE.md` for its exact inputs, stages, and rules.
 
-## One-time setup
-
-Run `.\setup.ps1` from the repo root. It creates `.venv`, installs the Python packages `tools/`
-needs (`scipy`, `numpy`), and runs the LP verifier's example checks as a smoke test.
-
-```powershell
-.\setup.ps1
-```
-
-If PowerShell blocks the script, run it once with:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File setup.ps1
-```
-
-After setup, run any tool in this repo as `.venv/Scripts/python <script>` (not plain `python`,
-and no need to activate the venv).
-
-PDF rendering (`tools/render_pdf.sh`, run automatically by `/notes` and `/practice`) additionally
-needs [pandoc](https://pandoc.org/installing.html) and a LaTeX engine (`xelatex`). If either is
-missing, the script prints the exact install command for your OS; the `.md` file is still written
-either way — the PDF is a rendered copy, not the source of truth.
-
 ## Weekly checklist
 
 1. Drop the week's raw files into `courses/<course>/weeks/weekNN/input/` (see that course's
